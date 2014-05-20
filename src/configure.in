@@ -2432,8 +2432,9 @@ AC_CHECK_LIB(Xinerama, XineramaQueryExtension,
 	    [HAVE_XINERAMA=no])
 
 if test "x$HAVE_XINERAMA" = "xno"; then
-    AC_MSG_ERROR([Xinerama library or headers not found])
+    AC_MSG_WARN([Xinerama library or headers not found, compiling without Xinerama.])
 fi
+AC_SUBST([HAVE_XINERAMA])
 
 # check for Xaw, that is needed for emc2/src/emc/usr_intf/xemc.cc
 
