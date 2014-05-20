@@ -1767,7 +1767,7 @@ AC_SUBST([CONFIG_DATE])
 ##############################################################################
 
 AC_ARG_ENABLE(glib,
-    [  --disable-glib       Disable glib]
+    [  --disable-glib       Disable glib],
     [
     case "$enableval" in
     Y*|y*)
@@ -1775,10 +1775,10 @@ AC_ARG_ENABLE(glib,
     *)
         BUILD_GLIB=no ;;
     esac
-    ].
+    ],
     [BUILD_GLIB=yes])
 
-if test "$BUILD_GLIB" = "no"; then
+if test "$BUILD_GLIB" = "yes"; then
   AC_MSG_CHECKING([for glib])
   if pkg-config glib-2.0 >/dev/null 2>&1; then
     GLIB_VER=`pkg-config glib-2.0 --modversion`
@@ -1786,7 +1786,7 @@ if test "$BUILD_GLIB" = "no"; then
     GLIB_CFLAGS=`pkg-config glib-2.0 --cflags`
     GLIB_LIBS=`pkg-config glib-2.0 --libs`
   else
-    AC_MSG_ERROR(no -- required until somebody makes glib optional)
+    AC_MSG_ERROR(glib-2.0 missing. Install or specify --disable-glib.)
   fi
 fi
 
