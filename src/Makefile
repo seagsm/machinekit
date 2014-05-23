@@ -320,7 +320,7 @@ GIT_BUILD_SHA := $(shell ../scripts/get-git-sha)
 $(info $(shell  ../scripts/check-build-vs-configure-sha))
 
 # Compilation options.	Perhaps some of these should come from Makefile.inc? (CXXFLAGS now does)
-INTEGER_OVERFLOW_FLAGS := $(call cc-option,-fwrapv) $(call cc-option, -fno-strict-overflow)
+INTEGER_OVERFLOW_FLAGS := $(call cc-option,-fwrapv) #$(call cc-option, -fno-strict-overflow)
 OPT := -Os $(INTEGER_OVERFLOW_FLAGS)
 DEBUG := -g -Wall
 
