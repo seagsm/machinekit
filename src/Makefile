@@ -308,9 +308,9 @@ endif
 
 # Each directory in $(INCLUDES) is passed as a -I directory when compiling.
 INCLUDE := $(patsubst %,-I%, $(INCLUDES))
-ifeq ($(BUILD_PYTHON),yes)
+#ifeq ($(BUILD_PYTHON),yes)
 INCLUDE += -I$(INCLUDEPY)
-endif
+#endif
 
 # trap build errors by making it possible to compare configure SHA vs build SHA
 # see configure.ac GIT_CONFIG_SHA for the configure-time string
