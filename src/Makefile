@@ -824,7 +824,9 @@ endif
 	$(FILE) Makefile.inc $(DESTDIR)$(datadir)/linuxcnc
 	$(EXE) $(TCL) $(DESTDIR)$(tcldir)
 	$(FILE) ../tcl/hal.so $(DESTDIR)$(tcldir)
+ifeq ($(HAVE_XINERAMA),yes)
 	$(FILE) ../tcl/linuxcnc.so $(DESTDIR)$(tcldir)
+endif
 	$(FILE) ../tcl/pkgIndex.tcl $(DESTDIR)$(tcldir)
 	$(EXE) $(TCL_BIN) $(DESTDIR)$(tcldir)/bin
 	$(FILE) ../tcl/scripts/balloon.tcl ../tcl/scripts/emchelp.tcl $(DESTDIR)$(tcldir)/scripts
