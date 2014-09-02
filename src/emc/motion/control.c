@@ -1167,7 +1167,7 @@ static void handle_jogwheels(void)
 	}
 	/* get counts from jogwheel */
 	new_jog_counts = *(joint_data->jog_counts);
-	delta = new_jog_counts - joint->old_jog_counts;
+	delta = new_jog_counts;
 	/* save value for next time */
 	joint->old_jog_counts = new_jog_counts;
 	/* initialization complete */
