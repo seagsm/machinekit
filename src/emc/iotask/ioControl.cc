@@ -386,7 +386,7 @@ int iocontrol_hal_init(void)
 	return -1;
     }
     // coolant-flood
-    retval = hal_pin_bit_newf(HAL_OUT, &(iocontrol_data->coolant_flood), comp_id,
+    retval = hal_pin_bit_newf(HAL_IO, &(iocontrol_data->coolant_flood), comp_id,
 			 "iocontrol.%d.coolant-flood", n);
     if (retval < 0) {
 	rtapi_print_msg(RTAPI_MSG_ERR,
