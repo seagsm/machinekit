@@ -331,11 +331,7 @@ CFLAGS += -DGIT_BUILD_SHA=\"'$(GIT_BUILD_SHA)'\"
 
 CXXFLAGS := $(INCLUDE) $(CXXFLAGS)   -DULAPI $(DEBUG) $(OPT)
 
-ifeq ($(RUN_IN_PLACE),yes)
 LDFLAGS := -L$(LIB_DIR) -Wl,-rpath,$(LIB_DIR)
-else
-LDFLAGS := -Wl,-rpath-link,../lib
-endif
 
 # Rules to make .o (object) files
 $(sort $(CUSEROBJS)) : objects/%.o: %.c
