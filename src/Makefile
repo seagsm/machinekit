@@ -224,6 +224,8 @@ SUBDIRS := \
 	emc \
 	emc/pythonplugin \
 	\
+	rajbhog-jalebi \
+	\
 	module_helper \
 	\
 	po \
