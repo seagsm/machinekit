@@ -1167,7 +1167,7 @@ static void handle_jogwheels(void)
 	}
 	/* get counts from jogwheel */
 	new_jog_counts = *(joint_data->jog_counts);
-	delta = new_jog_counts;
+	delta = joint->old_jog_counts;
 	/* save value for next time */
 	joint->old_jog_counts = new_jog_counts;
 	/* initialization complete */
@@ -1175,10 +1175,12 @@ static void handle_jogwheels(void)
 	    continue;
 	}
 	/* did the wheel move? */
-	if ( delta == 0 ) {
+	if ( new_jog_counts == 0 && delta != 0 ) {
 	    /* no, nothing to do */
 	    continue;
 	}
+
+    delta = new_jog_counts;
 	/* must be in free mode and enabled */
 	if (GET_MOTION_COORD_FLAG()) {
 	    continue;
